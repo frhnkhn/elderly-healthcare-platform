@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-gray-800 font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold leading-tight;
+  }
+
+  * {
+    @apply box-border;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-500;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white rounded-xl px-6 py-3 font-semibold transition-all duration-200
+           hover:bg-primary-600 active:scale-95 shadow-sm hover:shadow-md focus:outline-none
+           focus:ring-2 focus:ring-primary-300 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white rounded-xl px-6 py-3 font-semibold transition-all duration-200
+           hover:bg-secondary-600 active:scale-95 shadow-sm hover:shadow-md focus:outline-none
+           focus:ring-2 focus:ring-secondary-300 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary rounded-xl px-6 py-3 font-semibold transition-all duration-200
+           hover:bg-primary hover:text-white active:scale-95 focus:outline-none
+           focus:ring-2 focus:ring-primary-300 focus:ring-offset-2;
+  }
+
+  .btn-ghost {
+    @apply text-primary rounded-xl px-6 py-3 font-semibold transition-all duration-200
+           hover:bg-primary-50 active:scale-95 focus:outline-none;
+  }
+
+  .btn-danger {
+    @apply bg-red-500 text-white rounded-xl px-6 py-3 font-semibold transition-all duration-200
+           hover:bg-red-600 active:scale-95 shadow-sm focus:outline-none
+           focus:ring-2 focus:ring-red-300 focus:ring-offset-2;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-card p-6 transition-all duration-200;
+  }
+
+  .card-hover {
+    @apply hover:shadow-card-hover hover:-translate-y-0.5;
+  }
+
+  .input-field {
+    @apply w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-800 bg-white
+           focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-400
+           transition-all duration-200 placeholder:text-gray-400 text-base;
+  }
+
+  .label {
+    @apply block text-gray-700 font-medium mb-1.5 text-base;
+  }
+
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 font-medium
+           transition-all duration-150 hover:bg-primary-50 hover:text-primary cursor-pointer text-base;
+  }
+
+  .sidebar-link-active {
+    @apply bg-primary-50 text-primary border-r-4 border-primary;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold;
+  }
+
+  .badge-pending {
+    @apply badge bg-yellow-100 text-yellow-700;
+  }
+
+  .badge-accepted {
+    @apply badge bg-blue-100 text-blue-700;
+  }
+
+  .badge-active {
+    @apply badge bg-green-100 text-green-700;
+  }
+
+  .badge-completed {
+    @apply badge bg-gray-100 text-gray-600;
+  }
+
+  .badge-cancelled {
+    @apply badge bg-red-100 text-red-600;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-gray-900;
+  }
+
+  .section-sub {
+    @apply text-lg text-gray-500 mt-3 max-w-2xl mx-auto;
+  }
+
+  .page-title {
+    @apply text-2xl font-bold text-gray-900;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* Dark mode */  
+.dark body {
+  @apply bg-gray-900 text-gray-100;
+}
+
+.dark .card {
+  @apply bg-gray-800 border-gray-700;
+}
+
+.dark .input-field {
+  @apply bg-gray-700 border-gray-600 text-gray-100;
+}
+
+.dark .sidebar-link {
+  @apply text-gray-300 hover:bg-gray-700 hover:text-primary-300;
+}
+
+.dark .sidebar-link-active {
+  @apply bg-gray-700 text-primary-300;
+}
