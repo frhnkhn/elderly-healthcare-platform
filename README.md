@@ -128,6 +128,10 @@ User → Register/Login
 
 ---
 
+## Details
+
+https://docs.google.com/document/d/1gk3_Hpht7HJT29ZkkAe47m3e9THmRVEM3iXzQWrI6B8/edit?usp=sharing
+
 ## 🚀 Installation
 
 ```bash
